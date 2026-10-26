@@ -1,0 +1,183 @@
+:root {
+  --color-white: oklch(1 0 0);
+  --color-black: oklch(0 0 0);
+  --color-purple950: oklch(0.2499 0.0664 322);
+  --color-purple600: oklch(0.5686 0.0711 322);
+  --color-purple100: oklch(0.9618 0.0249 311.71);
+  --color-violet: oklch(0.5829 0.268 311.25);
+
+  --spacing-100: 8px;
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+
+  --font: "Work Sans", sans-serif;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Increase line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+.text-p {
+  font-family: var(--font);
+  font-size: var(--spacing-200);
+  font-weight: 600;
+  color: var(--color-purple950);
+}
+.text-normal {
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  color: var(--color-purple600);
+  margin-top: var(--spacing-300);
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  background-color: var(--color-purple100);
+  background-image: url(assets/images/background-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
+  justify-content: center;
+  align-items: center;
+}
+.body-img {
+  width: 100vw;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-300, 1.5rem);
+  gap: var(--spacing-300, 1.5rem);
+  border-radius: var(--spacing-100);
+  background-color: var(--color-white);
+  box-shadow: 0 32px 56px 0 var(--color-purple100);
+  z-index: 10;
+  max-width: 20rem;
+}
+.heading {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-300);
+}
+
+.icon {
+  width: var(--spacing-300);
+  height: var(--spacing-300);
+}
+.detail_container {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+}
+details {
+  padding-block: var(--spacing-300);
+  border-bottom: 1px solid var(--color-purple100);
+}
+details:active {
+  color: var(--color-purple100);
+}
+
+summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-purple950);
+}
+
+summary::after {
+  content: "";
+  display: block;
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  background-image: url(./assets/images/icon-plus.svg);
+  background-repeat: no-repeat;
+}
+
+details[open] summary::after {
+  background-image: url("./assets/images/icon-minus.svg");
+}
+
+@media (min-width: 600px) {
+  main {
+    width: 37.5rem;
+    max-width: 37.5rem;
+  }
+}
