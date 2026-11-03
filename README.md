@@ -35,7 +35,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [](https://your-solution-url.com)
+- Solution URL: [Live Site](https://your-solution-url.com)
 - Live Site URL: []([https://your-live-site-url.com](https://logstrup78.github.io/faq-accordion-main/))
 
 ## My process
