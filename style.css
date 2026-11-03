@@ -176,6 +176,9 @@ details[open] summary::after {
 }
 
 @media (min-width: 600px) {
+  body {
+    background-size: cover;
+  }
   main {
     width: 37.5rem;
     max-width: 37.5rem;
